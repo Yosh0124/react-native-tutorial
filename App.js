@@ -1,10 +1,22 @@
 import React, { Component } from 'react';
-import { AppRegistry, Text } from 'react-native';
+import { AppRegistry, Text, View } from 'react-native';
 
-export default class HelloWorldApp extends Component {
+class Greeting extends Component {
   render() {
     return (
-      <Text>Hello World!</Text>
-    )
+      <Text>Hello {this.props.name}!</Text>
+    );
+  }
+}
+
+export default class LotsOfGreetings extends Component {
+  render() {
+    return (
+      <View style={{alignItems: 'center'}}>
+        <Greeting name='Rexxar' />
+        <Greeting name='Jaina' />
+        <Greeting name='Valeera' />
+      </View>
+    );
   }
 }
